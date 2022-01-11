@@ -7,13 +7,16 @@ function App() {
   const [state, setState] = useState('init');
 
   useEffect(() => {
-    async function fetchText() {
-      let response = await fetch('http://localhost:5000/');
-      console.log(response);
-  }
-  fetchText()
+
     setState('init2')
   }, []);
+
+      async function fetchText() {
+        let response = await fetch('http://localhost:5000/');
+        // let response = await fetch('https://swapi.dev/api/people/1/');
+        console.log(response.json()) 
+    }
+    fetchText()
 
 
 
